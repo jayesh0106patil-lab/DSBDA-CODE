@@ -4,6 +4,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 df = pd.read_csv('uber.csv')
 df.head()
+
+
+
 Unnamed:
 0 key fare_amount pickup_datetime pickup_longitude
 0 24238194 2015-05-07
@@ -21,6 +24,7 @@ Unnamed:
 4 17610152 2014-08-28
 17:47:00.000000188 16.0 2014-08-28
 17:47:00 UTC -73.925023
+
 df.columns
 Index(['Unnamed: 0', 'key', 'fare_amount', 'pickup_datetime',
 'pickup_longitude', 'pickup_latitude', 'dropoff_longitude',
@@ -28,6 +32,7 @@ Index(['Unnamed: 0', 'key', 'fare_amount', 'pickup_datetime',
 dtype='object')
 df=df.drop(columns=(['pickup_longitude', 'pickup_latitude', 'dropoff_longitude'
 df.head()
+                     
 Unnamed:
 0 key fare_amount pickup_datetime passenger_count
 0 24238194 2015-05-07
@@ -45,6 +50,8 @@ Unnamed:
 4 17610152 2014-08-28
 17:47:00.000000188 16.0 2014-08-28
 17:47:00 UTC 5
+
+                     
 In [82]:
 In [83]:
 In [84]:
@@ -55,6 +62,7 @@ In [86]:
 In [87]:
 Out[87]:
 df.describe()
+                     
 Unnamed: 0 fare_amount passenger_count
 count 2.000000e+05 200000.000000 200000.000000
 mean 2.771250e+07 11.359955 1.684535
@@ -64,7 +72,10 @@ min 1.000000e+00 -52.000000 0.000000
 50% 2.774550e+07 8.500000 1.000000
 75% 4.155530e+07 12.500000 2.000000
 max 5.542357e+07 499.000000 208.000000
+
+                     
 df.describe()[['fare_amount', 'passenger_count']]
+                     
 fare_amount passenger_count
 count 200000.000000 200000.000000
 mean 11.359955 1.684535
@@ -74,6 +85,7 @@ min -52.000000 0.000000
 50% 8.500000 1.000000
 75% 12.500000 2.000000
 max 499.000000 208.000000
+                     
 df.shape
 (200000, 5)
 Finding outliers using data-visualization
